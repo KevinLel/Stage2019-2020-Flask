@@ -1,6 +1,6 @@
 # Stage 2019-2020 LPRGI - Homéo
 
-Homéo est un outil open-source permettant la gestion d'un parc locatif pour les propriétaire et proposer une plateforme de contact entre propriétaire et locataire
+Homéo est un outil open-source permettant la gestion d'un parc locatif pour les propriétaires et proposer une plateforme de contact entre propriétaires et locataires
 
   - Permet la gestion d'un Immeuble/Bien/Bail
   - Génération automatique des quittances de loyers
@@ -69,8 +69,8 @@ Taper la commande suivante afin d'activer le site
     a2ensite nomDeVotreFichier.conf
 ```
 
-Dans le repertoire /var/www créer un nouveau directory pour tout vos virtualhost.
-Dans celui-ci créer un nouveau directory portant le nom du projet.
+Dans le repertoire /var/www créez un nouveau directory pour tout vos virtualhost.
+Dans celui-ci créez un nouveau directory portant le nom du projet.
 Dans ce même directory créez un nouveau fichier webapp.wsgi et collez-y le code suivant tout en modifiant les XXXXX et la secret_key
 
 ```sh
@@ -102,7 +102,7 @@ Vous pouvez maintenant relancer Apache sur votre serveur avec la commande
 
 # En cas de problème
   - vérifiez qu'apache ait l'accès au dossier du projet
-  - verifiez que les droits d'accès à la base de données
+  - verifiez les droits d'accès à la base de données
   - Pensez à verifier les log apache dans le fichier error.log situé dans le repertoire var/log/apache2
   - En cas de problème autre, envoyez un mail de contact sur l'adresse kevin.leleu.pro@gmail.com
 
