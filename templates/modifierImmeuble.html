@@ -1,0 +1,51 @@
+{% extends "accueilProprietaire.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h3 class="titre">Modifier Immeuble</h3>
+        </div>
+    </div>
+</div>
+<form method="POST" class="formulaire">
+    <div class="container">
+        {% for field in form %}
+            <div class=" row">
+                <div class="col-sm">
+                    {{ field.label(class_="form-label") }}
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-sm">
+                    {{ field(class_="form-control form-input") }}
+                </div>
+            </div>
+            {% if field.errors %}
+                {% for error in field.errors %}
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="alert alert-error">{{ error }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        
+        {{ form.csrf_token }}
+        <button type="submit" class="valider">Valider</button>
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="row">
+                        <div class="col-sm">
+                            <h6 class="flashed-error">{{ message }}</h6>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    </form>
+{% endblock %}

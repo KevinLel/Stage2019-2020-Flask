@@ -1,0 +1,89 @@
+{% extends "accueilProprietaire.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h3 class="titre">Mon bail</h3>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label"> Adresse : {{ bail.idBien.adresse }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label"> Code postal : {{ bail.idBien.codePostal}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Ville : {{ bail.idBien.ville }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Loyer hors charges : {{ bail.prixLoyer }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Numéro du jour du paiement du loyer : {{ bail.jourPaiementLoyer }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Prix des charges : {{ bail.charges }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Type de paiement : {{ bail.typePaiement }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Durée du préavis : {{ bail.dureePreavis }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Prix du loyer à l'entrée : {{ bail.prixLoyerEntree }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Date d'entrée du logement : {{ bail.DateEntreeLogement }}</p>
+            </div>
+        </div>
+        {% if bail.depotDeGarantit == None %}
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Nom du garant : {{ bail.nomGarant }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Dépot de garantit : {{ bail.depotDeGarantit }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+            <a href="{{ url_for('modifierBail', idBail = bail.id) }}">Modifier</a>
+        </div>
+        <div class="col-1">
+            <a href="">Supprimer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

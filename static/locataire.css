@@ -1,0 +1,108 @@
+.navbar-custom{
+    background-color: #2ecc71;
+}
+#top-left-logo{
+    display: block;
+    height: 40%;
+    width: 40%;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+#sidebar {
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-image: url("./css/images/back.jpg");
+}
+
+#sidebar.active {
+    margin-left: -200px;
+}
+#logo{
+    display: block;
+    width: 90%;
+    height: 90%;
+    padding-left: 6%;
+    padding-top: 3%;
+}
+.aside-button{
+    color: #ffffff;
+    text-align: center;
+    font-size: 110%;
+    transition: padding-left 0.75s;
+}
+.aside-button:hover{
+    text-decoration: none;
+    padding-left: 6%;
+    color: #ffffff;
+}
+.button{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 5% 6% 5% 6%;
+    font-family: 'Crimson Text', serif;
+}
+}
+.button:hover{
+    background-color: #27ae60;
+}
+.bottom{
+    margin-top: 215%;
+}
+.top{
+    margin-top: 15%;
+}
+#EspaceLocataire{
+    color: #ffffff;
+    font-size: 110%;
+    font-family: 'Crimson Text', serif;
+}
+    margin-top: 12%;
+    padding-left: 6%;
+}
+
+
+
+
+/* 
+Debut CSS Page parametre
+*/
+.informations{
+    border: 3px;
+    border-color: #2ecc71;
+    border-radius: 20px;
+    border-style: solid;
+    margin-left: 40%;
+    padding-left: 5%;
+    display: block;
+    width: 280%;
+    height: 80%;
+    font-family: 'Crimson Text', serif;
+}
+    color: #2c3e50;
+    padding-top: 10%;
+}
+#mesInformations{
+    color: #2ecc71;
+    background-color: #ffffff;
+    margin-left: 35%;
+    margin-bottom: -5%;
+    font-family: 'Crimson Text', serif;
+}
+}
+#utilisateur-name{
+
+}
+
+#utilisateur-parameter{
+
+}
+#utilisateur-button-bottom{
+    margin-left: 80%;
+    display: block;
+    width: 280%;
+}

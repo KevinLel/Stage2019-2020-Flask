@@ -1,0 +1,9 @@
+flask
+requests
+peewee
+flask-login
+wtforms
+flask-wtf
+flask-mail
+reportlab
+pbkdf2

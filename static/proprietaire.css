@@ -1,0 +1,276 @@
+:root{
+    --sky: #caebf2;
+    --carbon: #A9A9A9;
+    --watermelon: #FF3B3F;
+    --neutral: #EFEFEF;
+    --white: #FFFFFF;
+}
+#top-left-logo{
+    display: block;
+    height: 40%;
+    width: 40%;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+.sidebar {
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: var(--white);
+    position: fixed;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    z-index: 1; /* Stay on top */
+}
+body{
+    background-color: var(--neutral);
+}
+#logo{
+    display: block;
+    width: 90%;
+    height: 90%;
+    padding-left: 6%;
+    padding-top: 3%;
+}
+.aside-button{
+    color: var(--carbon);
+    text-align: left;
+    font-size: 110%;
+    transition: padding-left 0.75s;
+    padding-left: 3%;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    display: block;
+    font-family: 'Crimson Text', serif;
+}
+.aside-button:hover{
+    text-decoration: none;
+    padding-left: 8%;
+    color: #ffffff;
+    background-color: var(--watermelon);
+}
+
+.sidebar-images{
+   display: inline-block;
+   width: 20%;
+   height: 20%;
+   padding-bottom: 5%;
+   padding-right: 5%;
+}
+.fas{
+    padding-left: 10px;
+    padding-right: 10%;
+}
+#EspaceLocataire{
+    color: var(--carbon);
+    font-size: 110%;
+    font-family: 'Crimson Text', serif;
+    margin-top: 12%;
+    padding-left: 45px;
+}
+
+
+
+
+/* 
+Debut CSS Page parametre
+*/
+.informations{
+    border: 2px;
+    border-color: #bdc3c7;
+    border-radius: 20px;
+    border-style: solid;
+    margin: 0 auto;
+    padding-left: 1%;
+    display: inline-block;
+    width: 80%;
+    font-family: 'Crimson Text', serif;
+    color: #2c3e50;
+    padding-top: 1%;
+}
+#mesInformations{
+    color: #2ecc71;
+    background-color: #ffffff;
+    margin-left: 35%;
+    margin-bottom: -5%;
+    font-family: 'Crimson Text', serif;
+}
+
+#utilisateur-button-bottom{
+    margin-left: 80%;
+    display: block;
+    width: 280%;
+}
+#title{
+    color: #2ecc71;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+#nouveau{
+    color: #bdc3c7;
+    display: block;
+    width: 100%;
+    text-align: right;
+    color: #2ecc71;
+}
+#error{
+    color: #bdc3c7;
+    font-family: 'Crimson Text', serif;
+}
+
+
+/*  PARTIE BIENS    */
+/* Classe pour l'affichage des lignes dans la liste de biens */
+.display-line{
+    border: solid #bdc3c7 2px;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-right: 1.5%;
+    display: block;
+    font-family: 'Crimson Text', serif;
+}
+
+.display-line-header{
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-right: 1.5%;
+    display: block;
+    font-family: 'Crimson Text', serif;
+}
+
+/* Classe pour l'affichage de l'adresse des biens dans la liste */
+.bien-address{
+    margin-left: 2%;
+    color: #2a4447;
+    font-family: 'Crimson Text', serif;
+    padding-top: 0.5%;
+    font-size: 1.2em;
+}
+.bien-address-right{
+    color: #2a4447;;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 0.5%;
+}
+
+/* FIN PARTIE BIEN */
+
+
+.formulaire{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+.content{
+    width: auto;
+}
+.page-content-wrapper{
+    display: block;
+    width: 100%;
+}
+
+
+/* CLASSE GENERIQUE */
+
+/* Bouton supprimer generique */
+.supprimer{
+    color: #e74c3c;
+    margin-right: 3%; 
+    padding-right: 3%;
+    font-size: 1.1em;
+}
+.supprimer:hover{
+    color: #e74c3c;
+    text-decoration: none;
+}
+.modifier{
+    color: #2ecc71;
+    font-size: 1.1em;
+}
+.modifier:hover{
+    color: #2ecc71;
+    text-decoration: none;
+}
+
+/* Bouton valider generique des formulaires */
+.valider{
+    margin: 0 auto;
+    background-color: #2ecc71;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 20px;
+    width: 30%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: block;
+    transition: width 0.75s;
+    font-family: 'Crimson Text', serif;
+}
+
+.valider:hover{
+    width: 100%;
+}
+.green-button{
+    color: #2ecc71;
+    font-size: 1.1em;
+    text-align: right;
+    font-family: 'Crimson Text', serif;
+}
+
+.green-button:hover{
+    color: #2ecc71;
+    text-decoration: none;
+}
+.titre{
+    color: #263f42;
+    font-family: 'Crimson Text', serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.baux_nouveau{
+    padding-top: 2%;
+}
+.informationsProprietaire{
+    color: #263f42;
+    font-family: 'Crimson Text', serif;
+    padding-bottom: 2%;
+    font-size: 1.1em;
+}
+.form-label{
+    color: #263f42;
+    font-family: 'Crimson Text', serif;
+    padding-bottom: 0.5%;
+    padding-top: 2%;
+}
+.form-2{
+    margin-left:  0;
+}
+.conteneur-link{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+h5{
+    color: #263f42;
+    font-family: 'Crimson Text', serif;
+    padding-top: 25px;
+}
+.bien-address-right-nvx{
+    color: #2a4447;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1em;
+    text-align: right;
+    padding-top: 0.5%;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+{% extends "accueilProprietaire.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h3 class="titre">Mon bien</h3>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label"> Adresse : {{ bien.adresse }} , {{ bien.codePostal }} {{ bien.ville }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label"> Superficie : {{ bien.superficie }} </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label"> Nombre de piece habitable : {{ bien.nombrePieceHabitable }} </p>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+            <a href="{{ url_for('modifierBien', idBien = bien.id) }}">Modifier</a>
+        </div>
+        <div class="col-1">
+            <a href="">Supprimer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

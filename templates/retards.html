@@ -1,0 +1,63 @@
+{% extends "accueilProprietaire.html" %}
+
+{% block content %}
+    <div id="titre">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h3 class="titre">Mes paiements </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if nbPaiement == 0 %}
+    <div id="error">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Aucun retard pour le moment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+        <div class="container">
+            <div class="display-line-header">
+                <div class="row">
+                    <div class="col">
+                        <p class="bien-address">Nom et prenom</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="bien-address-right">Date du paiement</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="bien-address-right">Paiement effectue</p>
+                    </div>
+                </div>
+            </div>
+            {% for items in paiements %}
+            <div class="display-line">
+                <div class="row">
+                    <div class="col">
+                        <a href="{{ url_for('validationPaiement', idPaiement = items.id) }}" class="bien-address">{{ items.idBail.idLocataire.nom }} {{ items.idBail.idLocataire.nom }}</a>
+                    </div>
+                    <div class="col-2">
+                        <p class="bien-address-right">{{ items.datePaiement }}</p>
+                    </div>
+                    {% if items.paiementEffectue == False %}
+                    <div class="col-2">
+                        <p class="bien-address-right">Non</p>
+                    </div>
+                    {% else %}
+                    <div class="col-2">
+                        <p class="bien-address-right">Oui</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div> 
+    </div>
+{% endif %}
+{% endblock %}

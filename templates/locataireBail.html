@@ -1,0 +1,79 @@
+{% extends "accueilLocataire.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h3 class="titre">Mon bail</h3>
+        </div>
+    </div>
+</div>
+    {% if bail != None %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label"> Adresse : {{ bail.prixLoyer }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label"> Prix du loyer : {{ bail.prixLoyer }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Jour de paiement du loyer : {{ bail.jourPaiementLoyer }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Prix des charges : {{ bail.charges }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Detail des charges : {{ bail.typeCharges }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Duree du preavis : {{ bail.dureePreavis }} mois</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Prix du loyer d'entree: {{ bail.prixLoyerEntree }} €</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Date d'entree du logement : {{ bail.DateEntreeLogement }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Nom du garant : {{ bail.nomGarant }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Date de creation du bail : {{ bail.dateCreationBail }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Duree du bail : {{ bail.dureeBail }} ans</p>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div id="error">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Vous ne possedez aucun bail pour le moment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

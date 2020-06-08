@@ -1,0 +1,68 @@
+{% extends "accueilProprietaire.html" %}
+
+{% block content %}
+    <div id="titre">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h3 class="titre">Paiements à valider</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if nbPaiement == 0 %}
+    <div id="error">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Vous n'avez pour l'instant aucun paiement enregistres, le systeme s'en charge pour vous</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="container">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="bien-address">Nom et prénom</p>
+                            </div>
+                            <div class="col-2">
+                                <p class="bien-address-right">Date de paiement</p>
+                            </div>
+                            <div class="col-2">
+                                <p class="bien-address-right">Paiement validé</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% for items in paiements %}
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <a href="{{ url_for('validationPaiement', idPaiement = items.id) }}" class="bien-address">{{ items.idBail.idLocataire.nom }} {{ items.idBail.idLocataire.prenom }}</a>
+                        </div>
+                        <div class="col-2">
+                            <p class="bien-address-right">{{ items.datePaiement }}</p>
+                        </div>
+                        {% if items.paiementEffectue == 1 %}
+                        <div class="col-2">
+                            <p class="bien-address-right">Oui</p>
+                        </div>
+                        {% else %}
+                        <div class="col-2">
+                            <p class="bien-address-right">Non</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+            </ul>
+        </div> 
+    </div>
+{% endif %}
+{% endblock %}

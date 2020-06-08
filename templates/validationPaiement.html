@@ -1,0 +1,55 @@
+{% extends "accueilProprietaire.html" %}
+
+{% block content %}
+    <div id="titre">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h3 class="titre">Valider le paiement</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                {% if paiement.paiementEffectue == 0 %}
+                    <p>Le paiement n'a pas ete valide</p>
+                        <form method="POST" class="form-2">
+                            {% for field in form %}
+                                <div class=" row">
+                                    <div class="col-sm">
+                                        {{ field.label(class_="form-label") }}
+                                    </div>
+                                </div>
+                                <div class=" row">
+                                    <div class="col-sm">
+                                        {{ field(class_="form-control form-input") }}
+                                    </div>
+                                </div>
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="alert alert-error">{{ error }}</div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            {{ form.csrf_token }}
+                            <button type="submit" class="valider">Valider</button>
+                        </form>
+                {% else %}
+                        <p>Le paiement a ete valide</p>
+                        {% if paiement.quittance == True %}
+                            <a href="{{ url_for('genererQuittance', idPaiement = paiement.id ) }}">visionner Quittance</a>
+                        {% else %}
+                            <a href="">visionner la quittance</a>
+                        {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

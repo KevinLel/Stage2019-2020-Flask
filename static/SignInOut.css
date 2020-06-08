@@ -1,0 +1,78 @@
+:root{
+    --sky: #caebf2;
+    --carbon: #A9A9A9;
+    --watermelon: #FF3B3F;
+    --neutral: #EFEFEF;
+    --white: #FFFFFF;
+}
+p{
+    color: var(--carbon);
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+#form{
+    background-color: var(--white);
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.valider{
+    margin: 0 auto;
+    background-color: var(--watermelon);
+    color: #ffffff;
+    border-style: none;
+    border-radius: 20px;
+    width: 30%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: block;
+    transition: width 0.75s;
+    font-family: 'Crimson Text', serif;
+}
+.valider:hover{
+    width: 100%;
+}
+#form_title, #forgotten{
+    text-align: center;
+    margin:  0 auto;
+    font-family: 'Crimson Text', serif;
+    color: var(--watermelon);
+}
+#logo{
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.flashed-error{
+    text-align: center;
+    color: #e74c3c;
+    font-family: 'Crimson Text', serif;
+
+}
+body{
+    background-color: var(--neutral);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100% !important;
+    background-attachment: fixed;
+    height: 100%;
+}
+.form-label{
+    font-family: 'Crimson Text', serif;
+    padding-top: 4%;
+    color: #000000;
+}
+.mainForm{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+a{
+     color: var(--watermelon);
+}
+a:hover{
+    text-decoration: none;
+    color: var(--watermelon);
+}

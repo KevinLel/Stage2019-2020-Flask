@@ -1,0 +1,77 @@
+{% extends "accueilProprietaire.html" %}
+
+{% block content %}
+    <div id="titre">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <h3 class="titre">Mes immeubles </h3>
+                </div>
+                <div class="col-3">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="conteneur-link">
+                        <a href="{{ url_for('nouveauImmeuble') }}" class="green-button">Ajouter un immeuble</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if nbImmeuble != 0 %}
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="bien-address">Adresse</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="bien-address">Code postal</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% for items in immeubles %}
+        <li class="list-group-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <a href="{{ url_for('visionnerImmeuble', idImmeuble = items.id) }}" class="bien-address">{{ items.adresse }}</a>
+                    </div>
+                    <div class="col-5">
+                        <p class="bien-address">{{ items.codePostal }}</p>
+                    </div>
+                    <div class="col-1">
+                        <a href="{{ url_for('modifierImmeuble', idImmeuble = items.id) }}" class="modifier">Modifier</a>
+                    </div>
+                    <div class="col-1">
+                        <a href="{{ url_for('suppresionImmeuble', idImmeuble = items.id) }}" class="supprimer">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+        </ul>
+    </div> 
+    {% elif nbImmeuble == 0 %}
+    <div id="error">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Vous n'avez aucun immeuble d'enregistre, cliquez sur "ajouter un immeuble" pour en creer un nouveau</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<div id="baux_nouveau">
+    <div class="container">
+        <div class="row">
+            
+    </div>
+</div>
+{% endblock %}

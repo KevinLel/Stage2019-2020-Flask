@@ -1,0 +1,44 @@
+{% extends "accueilLocataire.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h3 class="titre">Mon proprietaire</h3>
+        </div>
+    </div>
+</div>
+    {% if proprietaire != None %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">{{ proprietaire.idProprietaire.nom }} {{ proprietaire.idProprietaire.prenom }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Adresse : {{ proprietaire.idProprietaire.adresse }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Envoyez un mail au proprietaire en cliquant <a href="mailto:{{proprietaire.email}}">ici</a> </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <p class="form-label">Date de naissance : {{ proprietaire.idProprietaire.dateNaissance }}</p>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div id="error">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Vous ne possedez pas encore de proprietaire</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "skeleton.html" %}
+{% block head %}
+    <link href="{{ url_for('static', filename='proprietaire.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fa3e57d09.js" crossorigin="anonymous"></script>
+    <title>Homeo - locataire</title>
+{% endblock %}
+{% block header %}
+  
+{% endblock %}
+{% block main %}
+<div class="wrapper">
+  <div id="sidebar-wrapper" class="sidebar">
+    <ul class="list-unstyled components top">
+      <li><p id="EspaceLocataire">Espace Locataire</p></li>
+      <li class="button"><a href="{{ url_for('bail') }}" class="aside-button"><i class="fas fa-sticky-note fa-lg"></i>Mon Bail</a></li>
+      <li class="button"><a href="{{ url_for('paiementLocataire') }}" class="aside-button"><i class="fas fa-money-check-alt fa-lg"></i>Paiements</a></li>
+      <li class="button"><a href="{{ url_for('retards') }}" class="aside-button"><i class="fas fa-hourglass-end fa-lg"></i>Retards</a></li>
+      <li class="button"><a href="{{ url_for('proprietaire') }}" class="aside-button"><i class="fas fa-user fa-lg"></i>Proprietaire</a></li>
+      <li class="button"><a href="{{ url_for('infoLocataire') }}" class="aside-button"><i class="fas fa-cog fa-lg"></i>Parametres</a></li>
+      <li class="button"><a href="{{ url_for('deconnexion') }}" class="aside-button"><i class="fas fa-sign-out-alt fa-lg"></i>Deconnexion</a></li>
+    </ul>
+  </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          {%  block content %}
+          {% endblock %}
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

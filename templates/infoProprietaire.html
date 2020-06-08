@@ -1,0 +1,42 @@
+{% extends "accueilProprietaire.html" %}
+{% block content %}
+<div id="titre">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3 class="titre">Mes informations</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="information">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><p class="informationsProprietaire">Nom : {{ utilisateur.nom }} Prenom : {{ utilisateur.prenom }} </p></li>
+                    <li class="list-group-item"><p class="informationsProprietaire">Date de naissance : {{ utilisateur.dateNaissance }}</p></li>
+                    <li class="list-group-item"><p class="informationsProprietaire">Adresse email : {{ utilisateur.email }}</p></li>
+                    <li class="list-group-item"><p class="informationsProprietaire">adresse : {{ utilisateur.adresse }} </p></li>
+                    <li class="list-group-item"><p class="informationsProprietaire">numero de telephone : {{ utilisateur.numeroTelephone }} </p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Modification">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-auto">
+                <a href="{{ url_for('modifierProprietaire') }}" class="green-button">Modifier</a>
+            </div>
+            <div class="col-md-auto">
+                <a href="{{ url_for('modifierMotPasse') }}" class="green-button">Modifier le mot de passe</a>
+            </div>
+            <div class="col-md-auto">
+                <a href="{{ url_for('suppresionProprietaire') }}" class="green-button">Supprimer</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

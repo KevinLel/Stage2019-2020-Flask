@@ -1,0 +1,6 @@
+setup.py
+Homeo.egg-info/PKG-INFO
+Homeo.egg-info/SOURCES.txt
+Homeo.egg-info/dependency_links.txt
+Homeo.egg-info/requires.txt
+Homeo.egg-info/top_level.txt

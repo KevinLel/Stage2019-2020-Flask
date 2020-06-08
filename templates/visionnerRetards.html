@@ -1,0 +1,53 @@
+{% extends "accueilProprietaire.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3 class="titre">Retards</h3>
+            </div>
+        </div>
+    </div>
+    {% if nbretards != 0 %}
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-10">
+                            <p class="bien-address">Nom et prénom</a>
+                        </div>
+                        <div class="col-2">
+                            <p class="bien-address">Date de paiement</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% for items in retards %}
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-10">
+                            <a href="{{ url_for('visionnerImmeuble', idImmeuble = items.id) }}" class="bien-address">{{ items.idBail.idLocataire.nom }} {{ items.idBail.idLocataire.prenom }}</a>
+                        </div>
+                        <div class="col-2">
+                            <a href="{{ url_for('visionnerImmeuble', idImmeuble = items.id) }}" class="bien-address">{{ items.datePaiement }}</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div> 
+    {% else %}
+    <div id="error">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Aucun retards pour le moment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

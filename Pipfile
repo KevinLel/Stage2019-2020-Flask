@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "*"
+requests = "*"
+peewee = "*"
+flask-login = "*"
+wtforms = "*"
+flask-wtf = "*"
+flask-mail = "*"
+reportlab = "*"
+pbkdf2 = "*"
+pdfkit = "*"
+flask-restful = "*"
+itsdangerous = "*"
+bcrypt = "*"
+
+[requires]
+python_version = "3.6"

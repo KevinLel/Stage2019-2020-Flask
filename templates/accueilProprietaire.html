@@ -1,0 +1,35 @@
+{% extends "skeleton.html" %}
+{% block head %}
+    <link href="{{ url_for('static', filename='proprietaire.css') }}" rel="stylesheet">
+    <title>Homeo - proprietaire</title>
+    <script src="https://kit.fontawesome.com/3fa3e57d09.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet"> 
+    {% endblock %}
+{% block header %}
+  
+{% endblock %}
+{% block main %}
+<div class="wrapper">
+  <div id="sidebar-wrapper" class="sidebar">
+    <ul class="list-unstyled components top">
+      <li><p id="EspaceLocataire">Espace Proprietaire</p></li>
+      <li class="button"><a href="{{ url_for('biens') }}" class="aside-button"><i class="fas fa-home fa-lg"></i>Biens</a></li>
+      <li class="button"><a href="{{ url_for('immeubles') }}" class="aside-button"><i class="fas fa-building fa-lg"></i>Immeubles</a></li>
+      <li class="button"><a href="{{ url_for('baux') }}" class="aside-button"><i class="fas fa-sticky-note fa-lg"></i>Baux</a></li>
+      <li class="button"><a href="{{ url_for('paiements') }}" class="aside-button"><i class="fas fa-money-check-alt fa-lg"></i>Paiements</a></li>
+      <li class="button"><a href="{{ url_for('visionnerRetard') }}" class="aside-button"><i class="fas fa-hourglass-end fa-lg"></i>Retards</a></li>
+      <li class="button"><a href="{{ url_for('parametreProprietaire') }}" class="aside-button"><i class="fas fa-cog fa-lg"></i>Parametres</a></li>
+      <li class="button"><a href="{{ url_for('deconnexion') }}" class="aside-button"><i class="fas fa-sign-out-alt fa-lg"></i>Deconnexion</a></li>
+    </ul>
+  </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          {%  block content %}
+          {% endblock %}
+        </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

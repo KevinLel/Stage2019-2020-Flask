@@ -1,0 +1,39 @@
+{% extends "skeleton.html" %}
+{% block head %}
+    <link href="{{ url_for('static', filename='SignInOut.css') }}" rel="stylesheet">
+    <title>Homeo - connexion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet"> 
+{% endblock %}
+{% block main %}
+<br>
+<div id="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3 id="form_title">Verification de votre compte</h3>
+            </div>
+        </div>
+    </div>
+    <form method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p> Bonjour {{ utilisateur.prenom }}, merci d'avoir confirmer votre compte. Vous pouvez vous connecter sur votre compte dès maintenant</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div id="forgotten"> 
+                        <a href="{{ url_for('signIn') }}">Se connecter</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </form>
+</div>
+
+
+
+{% endblock %}

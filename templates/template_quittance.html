@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <div class="container">
+    <hr>
+    <div class="row">
+      <div class="col-sm">
+        <h1 style = "text-align: center; font-family: 'Playfair Display', serif;">
+          Quittance de Loyer
+        </h1>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <br>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.7em;">Nom du bailleur : </h2>
+        <br>
+      </div>
+      <div class="col">
+        <br>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.7em;">{{ paiement.idBail.idProprietaire.prenom }} - {{ paiement.idBail.idProprietaire.nom }} </h2>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <br>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.7em;">Reçu de M : </h2>
+        <br>
+      </div>
+      <div class="col">
+        <br>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.7em;">{{ paiement.idBail.idLocataire.prenom }} - {{ paiement.idBail.idLocataire.nom }}</h2>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <br>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.7em;">La somme de : </h2>
+        <br>
+      </div>
+      <div class="col">
+        <br>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.7em;">{{ paiement.prixPaiement }} €</h2>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <br>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.7em;">Pour le montant d'un mois de loyer des locaux qu'il occupe dans la maison située : {{ paiement.idBail.idBien.adresse }}, {{ paiement.idBail.idBien.codePostal }} {{ paiement.idBail.idBien.ville }} le dit loyer commençant le {{ dateBefore }} et se finissant le {{ dateAfter }} sous toutes réserves de droit DONT QUITTANCE</h2>
+        <br>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

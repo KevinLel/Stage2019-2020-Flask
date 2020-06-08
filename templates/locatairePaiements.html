@@ -1,0 +1,74 @@
+{% extends "accueilLocataire.html" %}
+
+{% block content %}
+    <div id="titre">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h3 class="titre">Paiements validés</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if nbpaiement == 0 %}
+    <div id="error">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Vous ne possedez aucun paiement pour le moment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="container">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="bien-address">Adresse</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="bien-address-right">Numéro de la propriété</p>
+                            </div>
+                            <div class="col-2">
+                                <p class="bien-address-right">Etage</p>
+                            </div>
+                            <div class="col-2">
+                                <p class="bien-address-right">Date</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="bien-address-right">Quittance</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% for items in paiements %}
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <p class="bien-address">{{ items.idBail.idBien.adresse }}</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="bien-address-right">{{ items.idBail.idBien.numAppartement }}</p>
+                        </div>
+                        <div class="col-2">
+                            <p class="bien-address-right">{{ items.idBail.idBien.etage }}</p>
+                        </div>
+                        <div class="col-2">
+                            <p class="bien-address-right">{{ items.datePaiement }}</p>
+                        </div>
+                        <div class="col-3">
+                            <a href="{{ url_for('genererQuittance', idPaiement = items.id) }}" class="bien-address-right">Visionner quittance</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+            </ul>
+        </div> 
+    </div>
+{% endif %}
+{% endblock %}
